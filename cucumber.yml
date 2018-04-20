@@ -1,0 +1,4 @@
+home: --format html --out homepage.html --format pretty --tags @home
+flight: --format html --out homepage.html --format pretty --tags @flight
+booking: --format html --out homepage.html --format pretty --tags @booking
+acceptance: --format html --out homepage.html --format pretty --tags @acceptance
