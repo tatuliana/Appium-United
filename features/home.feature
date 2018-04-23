@@ -31,16 +31,17 @@ Feature: Homescreen feature
   Scenario: Using left to right swipe I open left menu and check functionality of currency converter
     Given I land on the home screen and verify Home link is displayed
     When I swipe screen to the "right" direction
-    Then I swipe screen to the "up" direction
-    Then I swipe screen to the "up" direction
-    And I click on menu item "Currency converter"
+#    Then I swipe screen to the "up" direction
+#    Then I swipe screen to the "up" direction
+#    And I click on menu item "Currency converter"
+    And I look for menu item "Currency converter", swipe to find it if necessary and then click
     Then I enter "100000" as amount I want to exchange
     Then I click currency to exchange from
     And I click on letter "R"
     Then I click on currency "Russian Ruble (RUB)"
     Then I click currency to exchange to
     And I click on letter "U"
-    Then I swipe screen to the "down" direction
+    Then I swipe screen to the "down_for_15" direction
     And I click on currency "US Dollars (USD)"
     Then I click Convert button
     And I verify "Currency results" is displayed

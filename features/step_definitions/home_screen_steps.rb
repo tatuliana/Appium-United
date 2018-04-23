@@ -41,6 +41,7 @@ end
 
 When(/^I swipe screen to the "([^"]*)" direction$/) do |direction|
   screen_actions.swipe_to_direction(direction)
+  sleep 2
 end
 
 And(/^I click on menu item "([^"]*)"$/) do |item|
@@ -117,4 +118,8 @@ end
 And(/^I verify search results include flight number "([^"]*)" and departure airport "([^"]*)"$/) do |flight_result, departure_result|
   expect(home_screen.flight_result.text).to include(flight_result)
   expect(home_screen.departure_result.text).to include(departure_result)
+end
+
+And(/^I look for menu item "([^"]*)", swipe to find it if necessary and then click$/) do |item|
+  home_screen.find_click_menu_item(item)
 end

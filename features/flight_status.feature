@@ -16,7 +16,7 @@ Feature: Flight status feature
   Scenario: Checking Flight Status By Number
     Given I land on the home screen and verify Home link is displayed
     When I click Flight status button
-    And I type "261" flight number
+    And I type "222" flight number
     Then I type "San Francisco" in Select departure airport field
     And click on flight search result
     Then I click Search button

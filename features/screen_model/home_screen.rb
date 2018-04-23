@@ -51,6 +51,16 @@ class HomeScreen < ScreenActions
     find_element(name: "#{item}").click
   end
 
+  def find_click_menu_item(item)
+    menu_items = find_elements(name: "#{item}")
+    while menu_items.count == 0
+      swipe_to_direction("up")
+      sleep 2
+      menu_items = find_elements(name: "#{item}")
+    end
+      menu_items[0].click
+  end
+
   def enter_amount(amount)
     amount_field = find_element(id: "editAmount")
     amount_field.click

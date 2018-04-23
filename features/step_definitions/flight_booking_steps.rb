@@ -68,3 +68,7 @@ Then(/^I verify if Trip info contains airport id's "([^"]*)"$/) do |airport_id|
   expect(flight_booking_screen.airport_ids.text).to include(airport_id)
 end
 
+And(/^I scroll text "([^"]*)"$/) do |text|
+  screen_actions.scroll_to text
+  sleep 7
+end

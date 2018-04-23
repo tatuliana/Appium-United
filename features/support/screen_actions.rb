@@ -8,13 +8,17 @@ class ScreenActions
 
   def swipe_to_direction(direction)
     if direction == "right"
-      swipe(:start_x => 0.01, :start_y => 0.5, :end_x => 0.9, :end_y => 0.5, :duration => 900)
+      swipe(:start_x => 0.01, :start_y => 0.5, :offset_x => 0.99, :offset_y => 0.5, :duration => 900)
     elsif direction == "left"
-      swipe(:start_x => 0.9, :start_y => 0.5, :end_x => 0.01, :end_y => 0.5, :duration => 900)
+      swipe(:start_x => 0.9, :start_y => 0.5, :offset_x => 0.01, :offset_y => 0.5, :duration => 900)
     elsif direction == "up"
-      swipe(:start_x => 0.5, :start_y => 0.9, :end_x => 0.5, :end_y => 0.2, :duration => 900)
+      swipe(:start_x => 0.5, :start_y => 0.99, :offset_x => 0.5, :offset_y => 0.2, :duration => 900)
     elsif direction == "down"
-      swipe(:start_x => 0.5, :start_y => 0.2, :end_x => 0.5, :end_y => 0.9, :duration => 900)
+      swipe(:start_x => 0.5, :start_y => 0.2, :offset_x => 0.5, :offset_y => 0.9, :duration => 900)
+    elsif direction == "up_for_15"
+      swipe(:start_x => 0.5, :start_y => 0.9, :offset_x => 0.5, :offset_y => 0.75, :duration => 900)
+    elsif direction == "down_for_15"
+      swipe(:start_x => 0.5, :start_y => 0.2, :offset_x => 0.5, :offset_y => 0.35, :duration => 900)
     end
   end
 

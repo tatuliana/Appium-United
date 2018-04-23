@@ -9,7 +9,8 @@ Feature: Book a flight feature
     Then I type "Los Angeles" in Select arrival airport field
     And click on flight search result
     Then I click Select a date Departure
-    Then I scroll to "28"
+#    Then I scroll to "28"
+    Then I swipe screen to the "up_for_15" direction
     And I click on "1" as a departure date and "3" as a return date
     Then I click on Select travel date
     And I clisk on Show Basic Economy fares
@@ -21,7 +22,9 @@ Feature: Book a flight feature
     Then I click on the cheapest price
     And I click on Compare link
     Then I click Select button
+#    And I scroll text "Economy for"
     And I swipe screen to the "up" direction
+    Then I swipe screen to the "up_for_15" direction
     And I confirm Fare Type
 #    return choice
     And I click Sort button
