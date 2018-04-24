@@ -1,23 +1,23 @@
-class FlightBookingScreen < ScreenActions
+class BookAFlightScreen < ScreenActions
 
-  def click_book_flight_button
-    find_element(id: "main_menu_bottom_section_bottomleft_button").click
+  def click_from_button
+    find_element(id: "commonDepartureAirportButton").click
+  end
+
+  def click_to_button
+    find_element(id: "commonArrivalAirportButton").click
   end
 
   def click_departure_date
     find_element(id: "FromDate").click
   end
 
-  def click_travel_date(date)
-    find_element(name: "#{date}").click
-  end
-
-  def click_select_travel_date
-    find_element(id: "action_mode_close_button").click
-  end
-
   def click_basic_fares
     find_element(id: "bookingFS_sc_BEFare").click
+  end
+
+  def click_search_flight_button
+    find_element(id: "searchButton").click
   end
 
   def click_sort_button
@@ -41,7 +41,13 @@ class FlightBookingScreen < ScreenActions
   end
 
   def click_confirm_fare_type
-    find_element(id: "btn_choose_up_sell").click
+    fares = find_elements(id: "btn_choose_up_sell")
+    while fares.count == 0
+      swipe_to_direction("up")
+      sleep 2
+      fares = find_elements(id: "btn_choose_up_sell")
+    end
+    fares[0].click
   end
 
   def click_continue_as_guest

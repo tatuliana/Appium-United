@@ -17,10 +17,10 @@ Feature: Homescreen feature
     Then I click Sign in button
     And the error message "Account number and password are required." should be displayed
 
-  Scenario: User should be able to open Enterntainment section
+  Scenario: User should be able to open Entertainment section
     Given I land on the home screen and verify Home link is displayed
-    When I click on Enterntainment section
-    Then "Personal device entertainment" should be displayed
+    When I click on Entertainment section
+    Then "Personal device entertainment" should be displayed on Entertainment page
 
   Scenario: User shouldn't be able to check in without entering his data to confirmation and last name fields
     Given I land on the home screen and verify Home link is displayed
@@ -31,9 +31,6 @@ Feature: Homescreen feature
   Scenario: Using left to right swipe I open left menu and check functionality of currency converter
     Given I land on the home screen and verify Home link is displayed
     When I swipe screen to the "right" direction
-#    Then I swipe screen to the "up" direction
-#    Then I swipe screen to the "up" direction
-#    And I click on menu item "Currency converter"
     And I look for menu item "Currency converter", swipe to find it if necessary and then click
     Then I enter "100000" as amount I want to exchange
     Then I click currency to exchange from
@@ -51,9 +48,9 @@ Feature: Homescreen feature
     When I click on wallet button
     Then I click on Add a flight alert
     And I enter flight number "261"
-    Then I click on Departure airport
-    And I enter "San Francisco" as a departure airport
-    Then I click on airport search result
+    And I click on Select departure airport
+    Then I enter "San Francisco" as a departure airport
+    Then I click on departure airport search result
     And I click on date
     Then I click on the latest possible date
     Then I click Search button to find flight
